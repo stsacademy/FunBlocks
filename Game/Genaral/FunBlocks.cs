@@ -15,7 +15,7 @@ namespace FunBlocks
         bool hasFrame;
         private State State = State.Starting;
         private int level;
-
+        public DateTime LastModified;
 
         public static int XOffeset = 0;
         public static int YOffeset = 0;
@@ -73,20 +73,29 @@ namespace FunBlocks
 
         public void GoLeft()
         {
-            if(State.Equals(State.Running))
+            if (State.Equals(State.Running))
+            {
+                LastModified = DateTime.Now;
                 GameBoard.GoLeft();
+            }
         }
 
         public void GoRight()
         {
             if (State.Equals(State.Running))
+            {
+                LastModified = DateTime.Now;
                 GameBoard.GoRight();
+            }
         }
 
         public void Fall()
         {
             if (State.Equals(State.Running))
+            {
+                LastModified = DateTime.Now;
                 GameBoard.Fall();
+            }
             
             if (GameBoard.IsFull)
                 State = State.GameOver;
@@ -111,7 +120,10 @@ namespace FunBlocks
         public void DropDown()
         {
             if (State.Equals(State.Running))
+            {
+                LastModified = DateTime.Now;
                 Board.DropDown();
+            }
         }
 
         int IFunBlocksGame.Level

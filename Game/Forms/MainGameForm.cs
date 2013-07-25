@@ -14,8 +14,9 @@ namespace FunBlocks
 {
     public partial class MainGameForm : Form
     {
-        IFunBlocksGame FunBlocks;
+        FunBlocksGame FunBlocks;
         int StartInterval = 1000;
+        int CurrentInerval = 1000;
 
         public MainGameForm()
         {
@@ -33,6 +34,8 @@ namespace FunBlocks
             FunBlocks = new FunBlocksGame(400, 200);
             FunBlocks.Start();
             timer1.Interval = StartInterval;
+            CurrentInerval = StartInterval;
+
             timer1.Start();
         }
 
@@ -48,7 +51,6 @@ namespace FunBlocks
                     break;
                 case 39: 
                     FunBlocks.GoRight();
-
                     break;
                 case 40: 
                     FunBlocks.Fall();
@@ -86,8 +88,16 @@ namespace FunBlocks
         {
             if(FunBlocks.GameState.Equals(State.Running))
             {
-                    if(timer1.Interval > 400)
-                        timer1.Interval-= 10;
+                if (DateTime.Now.Ticks - FunBlocks.LastModified.Ticks <= 200)
+                {
+                    timer1.Interval = 200;
+                    return;
+                }
+                else
+                {
+                    if (CurrentInerval > 400)
+                        timer1.Interval = CurrentInerval -= 10;
+                }
             }
 
             if(FunBlocks != null)
