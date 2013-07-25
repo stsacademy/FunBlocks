@@ -1,0 +1,11 @@
+E:\FunBlocks\Game\bin\Release\Game.exe.config
+E:\FunBlocks\Game\bin\Release\Game.exe
+E:\FunBlocks\Game\bin\Release\Game.pdb
+E:\FunBlocks\Game\obj\Release\FunBlocks.MainGameForm.resources
+E:\FunBlocks\Game\obj\Release\FunBlocks.Properties.Resources.resources
+E:\FunBlocks\Game\obj\Release\FunBlocks.csproj.GenerateResource.Cache
+E:\FunBlocks\Game\obj\Release\Game.exe
+E:\FunBlocks\Game\obj\Release\Game.pdb
+D:\FunBlocks\FunBlocks\Game\bin\Release\Game.exe.config
+D:\FunBlocks\FunBlocks\Game\obj\Release\Game.exe
+D:\FunBlocks\FunBlocks\Game\obj\Release\Game.pdb
